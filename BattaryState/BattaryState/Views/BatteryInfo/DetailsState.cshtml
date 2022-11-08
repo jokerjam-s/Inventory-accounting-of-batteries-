@@ -1,0 +1,44 @@
+﻿@model IEnumerable<LastBatteryState>
+
+@{
+    ViewData["Title"] = "Состояние батареи";
+}
+
+<h1>Информация</h1>
+
+<div>
+    <h4>Использование батареи @ViewBag.akbName </h4>
+    <hr />
+    
+    <table class="table table-hover table-sm">
+        <tr>
+            <th>Терминал</th>
+            <th>@Html.DisplayNameFor(model => model.beginChangeTime)</th>
+            <th>@Html.DisplayNameFor(model => model.lastChangeTime)</th>
+            <th>Время использования</th>
+            <th>@Html.DisplayNameFor(model => model.beginVoltage)</th>
+            <th>@Html.DisplayNameFor(model => model.endVoltage)</th>
+            <th>@Html.DisplayNameFor(model => model.currency)</th>
+            <th>% заряда</th>
+        </tr>
+
+        @foreach(var item in Model)
+        {
+            <tr>
+                <td>@item.terminalInfo.name</td>
+                <td>@item.beginChangeTime</td>
+                <td>@item.lastChangeTime</td>
+                <td>@(item.lastChangeTime - item.beginChangeTime)</td>
+                <td>@item.beginVoltage</td>
+                <td>@item.endVoltage</td>
+                <td>@item.currency</td>
+                <td>@(((item.endPercent + item.beginPercent)/2).ToString("d2"))  ( @item.beginPercent  -  @item.endPercent )</td>
+            </tr>
+        }
+
+    </table>
+        
+</div>
+<div>
+    <a class="btn btn-primary" asp-action="Index">К списку</a>
+</div>

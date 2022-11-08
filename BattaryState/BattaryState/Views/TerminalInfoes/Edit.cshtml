@@ -1,0 +1,102 @@
+﻿@model BattaryState.Models.TerminalInfo
+
+@{
+    ViewData["Title"] = "Изменить";
+}
+
+<h1>Изменить</h1>
+
+<h4>Информацию о терминале</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="name" class="control-label"></label>
+                <input asp-for="name" class="form-control" />
+                <span asp-validation-for="name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="serial" class="control-label"></label>
+                <input asp-for="serial" class="form-control" />
+                <span asp-validation-for="serial" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ModelTSDId" class="control-label"></label>
+                <select asp-for="ModelTSDId" class="form-control" asp-items="ViewBag.ModelTSDId"></select>
+                <span asp-validation-for="ModelTSDId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="prodYear" class="control-label"></label>
+                <input asp-for="prodYear" class="form-control" />
+                <span asp-validation-for="prodYear" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="garantSrok" class="control-label"></label>
+                <input asp-for="garantSrok" class="form-control" />
+                <span asp-validation-for="garantSrok" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="otvetstv" class="control-label"></label>
+                <input asp-for="otvetstv" class="form-control" />
+                <span asp-validation-for="otvetstv" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="macadr" class="control-label"></label>
+                <input asp-for="macadr" class="form-control" />
+                <span asp-validation-for="macadr" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="isDamage" /> @Html.DisplayNameFor(model => model.isDamage)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="dateDamage" class="control-label"></label>
+                <input asp-for="dateDamage" class="form-control" />
+                <span asp-validation-for="dateDamage" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="dismNotes" class="control-label"></label>
+                <input asp-for="dismNotes" class="form-control" />
+                <span asp-validation-for="dismNotes" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="isReserv" /> @Html.DisplayNameFor(model => model.isReserv)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="isRemont" /> @Html.DisplayNameFor(model => model.isRemont)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="remNotes" class="control-label"></label>
+                <input asp-for="remNotes" class="form-control" />
+                <span asp-validation-for="remNotes" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SkladId" class="control-label"></label>
+                <select asp-for="SkladId" class="form-control" asp-items="ViewBag.SkladId"></select>
+                <span asp-validation-for="SkladId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OpSystemId" class="control-label"></label>
+                <select asp-for="OpSystemId" class="form-control" asp-items="ViewBag.OpSystemId"></select>
+                <span asp-validation-for="OpSystemId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Сохранить" class="btn btn-success" /> |
+                <a class="btn btn-primary" asp-action="Index">К списку</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,41 @@
+﻿@model IEnumerable<BattaryState.Models.AppUser>
+@{
+    ViewBag.Title = "Список пользователей";
+}
+
+<a asp-action="Create" class="btn btn-success btn-sm">Добавить пользователя</a>
+
+<table class="table mt-3 table-hover table-sm">
+    <tr>
+        <th>Email</th>
+        <th>ФИО</th>
+        <th>Принят</th>
+        <th>Уволен</th>
+        <th></th>
+    </tr>
+    @foreach (var user in Model)
+    {
+        <tr>
+            <td>@user.Email</td>
+            <td>@user.userFio</td>
+            <td>@user.userPriem.ToString("d")</td>
+            <td>
+                @if (user.userDismis.HasValue)
+                {
+                    user.userDismis.GetValueOrDefault().ToString("d");
+                }
+
+            </td>
+
+            <td>
+                <form asp-action="Delete" asp-route-id="@user.Id" method="post">
+                    <a class="btn btn-sm btn-primary" asp-controller="Roles" asp-action="Edit" asp-route-email="@user.Email">Роли</a>
+                    <a class="btn btn-sm btn-primary" asp-action="Edit" asp-route-email="@user.Email">Изменить</a>
+                    <button type="submit" class="btn btn-sm btn-danger">
+                        Удалить
+                    </button>
+                </form>
+            </td>
+        </tr>
+    }
+</table>

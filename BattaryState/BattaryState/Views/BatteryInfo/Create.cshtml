@@ -1,0 +1,45 @@
+﻿@model BattaryState.Models.BatteryInfo
+
+@{
+    ViewData["Title"] = "Добавить";
+}
+
+<h1>Добавить</h1>
+
+<h4>Информацию о батарее</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="capacity" class="control-label"></label>
+                <input asp-for="capacity" class="form-control" />
+                <span asp-validation-for="capacity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="name" class="control-label"></label>
+                <input asp-for="name" class="form-control" />
+                <span asp-validation-for="name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="partnumber" class="control-label"></label>
+                <input asp-for="partnumber" class="form-control" />
+                <span asp-validation-for="partnumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="serial" class="control-label"></label>
+                <input asp-for="serial" class="form-control" />
+                <span asp-validation-for="serial" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Добавить" class="btn btn-primary" />
+                <a class="btn btn-primary" asp-action="Index">К списку</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

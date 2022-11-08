@@ -1,0 +1,108 @@
+﻿@model BattaryState.Models.TerminalInfo
+
+@{
+    ViewData["Title"] = "Просмотр";
+}
+
+<h1>Просмотр</h1>
+
+<div>
+    <h4>TerminalInfo</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.serial)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.serial)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.modelTSD.modName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.modelTSD.modName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.prodYear)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.prodYear)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.garantSrok)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.garantSrok)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.otvetstv)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.otvetstv)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.macadr)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.macadr)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.isDamage)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.isDamage)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.dateDamage)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.dateDamage)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.dismNotes)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.dismNotes)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.isReserv)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.isReserv)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.isRemont)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.isRemont)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.remNotes)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.remNotes)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.sklad.sklName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.sklad.sklName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.opsystem.osName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.opsystem.osName)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a class="btn btn-outline-warning" asp-action="Edit" asp-route-id="@Model.Id">Изменить</a> |
+    <a class="btn btn-primary" asp-action="Index">К списку</a>
+</div>

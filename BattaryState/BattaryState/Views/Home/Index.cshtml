@@ -1,0 +1,27 @@
+﻿@{
+    ViewData["Title"] = "Главная";
+}
+
+<div class="text-center">
+    <div class="jumbotron">
+        <h1 class="display-4">Система учета АКБ и ТСД</h1>
+        @if (User.Identity.IsAuthenticated)
+        {
+            <p class="lead">Для использования системы воспользуйтесь навигационным меню.</p>
+            <hr class="my-4">
+            <p>После завершения работы с системой не забудьте выполнить выход.</p>
+            <form method="post" asp-controller="Account" asp-action="Logout">
+                <input type="submit" class="btn btn-outline-warning btn-lg" asp-area="" asp-controller="Account" asp-action="Logout" value="Завершить работу" />
+            </form>
+        }
+        else
+        {
+            <p class="lead">Для доступа к информации необходимо авторизоваться в системе.</p>
+            <hr class="my-4">
+            <p>Для получения доступа обратитесь к администратору системы.</p>
+            <p class="lead">
+                <a class="btn btn-primary btn-lg" asp-action="Login" asp-controller="Account">Вход в систему</a>
+            </p>
+        }
+    </div>
+</div>

@@ -1,0 +1,27 @@
+﻿@model BattaryState.Models.ModelTSD
+
+@{
+    ViewData["Title"] = "Удалить";
+}
+
+<h1>Удаление</h1>
+
+<h3>Удалить данную информацию?</h3>
+<div>
+    <h4>Информация о модели ТСД</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.modName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.modName)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Удалить" class="btn btn-danger" /> |
+        <a class="btn btn-primary" asp-action="Index">К списку</a>
+    </form>
+</div>
